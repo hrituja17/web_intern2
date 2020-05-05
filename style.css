@@ -5,6 +5,18 @@ body{
     font-family: 'Jost', sans-serif;
 }
 
+.landing{
+    position: relative;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.pricing{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
 
 .logo{
     text-align: center;
@@ -32,7 +44,7 @@ body{
 
 .landingoptions li{
     list-style: none;
-    font-size: 2em;
+    font-size: 34px;
     padding: 10px;
 }
 
@@ -46,9 +58,6 @@ body{
     color: red;
 }
 
-.pricing{
-    margin-top: 40vh;
-}
 
 .pricelink{
     color: #ff4444;
@@ -79,7 +88,7 @@ body{
 
 
 .formbox{
-    width: 40%;
+    width: 50%;
     font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
     padding: 20px 30px 10px 30px;
@@ -89,7 +98,7 @@ body{
 }
 
 .loginformbox{
-    width: 40%;
+    width: 50%;
     font-family: 'Montserrat', sans-serif;
     margin: 0 auto;
     padding: 40px 30px 25px 30px;
@@ -104,7 +113,7 @@ body{
     border-radius: 2px;
     padding: 5px 10px;
     font-weight: bold;
-    box-shadow: 0 3px 5px -3px black;
+    box-shadow: 0 3px 5px -2px black;
     transition-duration: 1s;
 }
 
@@ -258,18 +267,70 @@ body{
 }
 
 
-
-/*
-@media only screen and(max-width: 968px){
+@media only screen and (max-width: 768px){
     .logo{
         height: 50px;
-        padding-top: 10vh;
+        padding-top: 15vh;
     }
 
     .list{
-        padding-top: 5vh;
+        padding-top: 40vh;
+        text-align: center;
         background: none;
         height: 50vh;
     }
+
+    .pricing{
+        right: 10%;
+    }
 }
-*/
+
+@media only screen and (max-width: 999px){
+    .formheading h1{
+        font-size: 28px;
+    }
+
+    .formpage{
+        height: 110vh;
+    }
+
+    .formbox{
+        width: 95%;
+    }
+
+    .loginformpage{
+        height: 110vh;
+    }
+
+    .loginformbox{
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1400){
+    .formheading h1{
+        font-size: 28px;
+    }
+
+    .formpage{
+        height: 110vh;
+    }
+
+    .formbox{
+        width: 85%;
+    }
+
+    .loginformpage{
+        height: 110vh;
+    }    
+
+    .loginformbox{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 1160px){
+    .landingoptions li{
+        font-size: 23px;
+    }
+}
