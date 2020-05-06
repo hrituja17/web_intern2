@@ -6,6 +6,7 @@
     <title>Home | RedPositive Services Pvt. Ltd.</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,55 +34,43 @@
                 </div>
             </div>
         </nav>
+
         <div class="container">
             <div class="row">
-                <div onmouseenter="createMeetingMessage()" class="col-sm-12 col-md-6 createmeetingcolumn">
-                    <div class="formheading text-center">
-                        <h1>Host a Meeting</h1>
+                <a href="meetingforms.html" class="col-sm-12 col-md-5 meetingcolumn">
+                    <div>
+                        <div class="formheading text-center">
+                            <h1>Meetings</h1>
+                        </div>
+                        <hr class="styledhr">
+                        <div class="text-center meetingimgholder">
+                            <img class="meetingimg" src="meetingimg.jpg" alt="Meetings image">
+                        </div>
+                        <div class="meetingsdesc text-center">
+                            <h5><i>Got a meeting to attend?</i></h5>
+                            <h5><i>Or are you the host?</i></h5>
+                            <hr class="styledhr">
+                            <h4>We've got you covered..</h4>
+                        </div>
                     </div>
-                    <div class="createmeetingformbox">
-                        <form action="/createmeeting" method="post">
-                            <div class="form-group">
-                                <label for="meetingPurpose">Meeting Name</label>
-                                <input class="form-control" type="text" name="meetingPurpose" placeholder="Enter meeting name.." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="meetingId">Meeting ID</label>
-                                <input class="form-control" type="text" name="meetingId" placeholder="Enter meeting ID.." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="meetingCode">Code</label>
-                                <input class="form-control" type="password" name="meetingCode" placeholder="Enter meeting code.." required>
-                            </div>
-                            <div class="form-group">
-                                <button class="button button-submit btn-block">Create Meeting</button>
-                            </div>
-                        </form>
+                </a> 
+                <a href="webinarforms.html" class="col-sm-12 col-md-5 offset-md-2 webinarcolumn">
+                    <div>
+                        <div class="formheading text-center">
+                            <h1>Webinars</h1>
+                        </div>
+                        <hr class="styledhr">
+                        <div class="text-center meetingimgholder">
+                            <img class="meetingimg" src="webinarimg.jpg" alt="Webinars image">
+                        </div>
+                        <div class="webinarsdesc text-center">
+                            <h5><i>Are you a student?</i></h5>
+                            <h5><i>Because, there's no age limit to learn.</i></h5>
+                            <hr class="styledhr">
+                            <h4>All your Webinars are in here..</h4>
+                        </div>
                     </div>
-                    <div class="text-center belowcreateform">
-                        <small id="createdesc">hi</small>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 joinmeetingcolumn">
-                    <div class="formheading text-center">
-                        <h1>Join a Meeting</h1>
-                    </div>
-                    <div class="joinmeetingformbox">
-                        <form action="/joinmeeting" method="post">
-                            <div class="form-group">
-                                <label for="meetingId">Meeting ID</label>
-                                <input class="form-control" type="text" name="meetingid" placeholder="Enter meeting ID.." required>
-                            </div>
-                            <div class="form-group">
-                                <label for="meetingId">Code</label>
-                                <input class="form-control" type="password" name="meetingCode" placeholder="Enter meeting code.." required>
-                            </div>
-                            <div class="form-group">
-                                <button class="button button-warning btn-block">Join Meeting</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
