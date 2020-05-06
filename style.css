@@ -86,6 +86,41 @@ body{
     background: #ffdbdb;
 }
 
+.homepage{
+    min-height: 100vh;
+    background: #ffdbdb;
+}
+
+nav{
+    margin-bottom: 10vh;
+    box-shadow: 0 5px 10px -4px black;
+    background-color: white;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    color: red !important;
+    font-weight: bold;
+} 
+
+.navbar-brand:hover{
+    color: red;
+    opacity: 0.6;
+}
+
+.nav-link{
+    font-size: 23px;
+    transition-duration: 0.4s;
+    color: black;
+    border-radius: 15px;
+    margin: 0 1px;
+}
+
+.nav-link:hover{
+    background-color: #fd5050;
+    border-radius: 15px;
+    color: white !important;
+}
 
 .formbox{
     width: 50%;
@@ -105,6 +140,51 @@ body{
     border-radius: 2px;
     box-shadow: 0 2px 10px -2px black;
     background: white;
+}
+
+.createmeetingformbox{
+    width: 80%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 40px 30px 25px 30px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px -2px black;
+    background: white;
+}
+
+.joinmeetingformbox{
+    width: 80%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 40px 30px 25px 30px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px -2px black;
+    background: white;
+}
+
+.createmeetingcolumn{
+    padding: 4vh;
+    transition-duration: 0.3s;
+}
+
+.createmeetingcolumn:hover{
+    background-color: #ffccbf;
+}
+
+.joinmeetingcolumn{
+    padding: 2vh;
+    border-left: 1px solid black;
+    transition-duration: 0.3s;
+}
+
+.joinmeetingcolumn:hover{
+    background-color: #ffccbf;
+}
+
+.belowcreateform{
+    margin-top: 2vh;
+    display: none;
+    transition-duration: 0.3s;
 }
 
 .button{
@@ -130,6 +210,11 @@ body{
 .button-login{
     background: #5ca805;
     color: white;
+}
+
+.button-warning{
+    color: black;
+    background: #ffef12;
 }
 
 .top{
@@ -179,6 +264,22 @@ body{
     height: 80vh;
     overflow-y: scroll;
     padding: 3vh 10px 0 10px;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #fda8a8;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #fd5050;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #a53c3c;
 }
 
 .chatheading{
@@ -234,19 +335,35 @@ body{
     box-shadow: none;
 }
 
+
 .mainvideo{
     padding: 15px;
     position: relative;
 }
 
-.share{
+.out{
     position: absolute;
     top: 5px;
     right: 20px;
-    font-size: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.out:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+.share{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 25px;
     border: none;
     background-color: white;
 }
+
 
 .mainvideo video{
     height: auto;
@@ -266,6 +383,9 @@ body{
     width: 200px;
 }
 
+.bars{
+    display: none;
+}
 
 @media only screen and (max-width: 768px){
     .logo{
@@ -283,9 +403,30 @@ body{
     .pricing{
         right: 10%;
     }
+    
+    .homepage{
+        padding-bottom: 10vh;
+    }
+
+    .joinmeetingcolumn{
+        margin-top: 10vh;
+        border-left: none;
+        border-top: 1px solid white;
+        padding-top: 2vh;
+    }
+
+    .createmeetingcolumn:hover{
+        background-color: transparent;
+    }
+    
+    .joinmeetingcolumn:hover{
+        background-color: transparent;
+    }
+    
 }
 
-@media only screen and (max-width: 999px){
+@media only screen and (max-width: 992px){
+
     .formheading h1{
         font-size: 28px;
     }
@@ -305,9 +446,59 @@ body{
     .loginformbox{
         width: 95%;
     }
+
+    .videoarea{
+        height: 80vh;
+        transition-duration: 0.3s;
+    }
+
+    .video-row{
+        display: none;
+    }
+
+    .mainvideo{
+        padding-top: 20vh;
+    }
+
+    .mainvideo video{
+        height: auto;
+        width: 70%;
+    }
+
+    .chat{
+        height: 0;
+        padding: 0 10px;
+        z-index: 1;
+    }
+
+    .chatheading h3{
+        font-size: 23px;
+    }
+
+    .chatheading{
+        z-index: 1;
+        position: relative;
+        border-radius: 3px;
+    }
+
+    .bars{
+        position: absolute;
+        display: block;
+        top: 15px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    .moreheight{
+        height: 50vh;
+    }
+
+    .lessheight{
+        height: 30vh;
+    }
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1400){
+@media screen and (min-width: 993px) and (max-width: 1400px){
     .formheading h1{
         font-size: 28px;
     }
@@ -317,7 +508,7 @@ body{
     }
 
     .formbox{
-        width: 85%;
+        width: 70%;
     }
 
     .loginformpage{
@@ -325,7 +516,7 @@ body{
     }    
 
     .loginformbox{
-        width: 95%;
+        width: 70%;
     }
 }
 
