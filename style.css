@@ -39,7 +39,7 @@ body{
 .list{
     height: 100vh;
     padding-top: 30vh;
-    background: rgba(235, 68, 68, 0.2);
+    background: #973f3f;
 }
 
 .landingoptions li{
@@ -49,13 +49,13 @@ body{
 }
 
 .landingoptions li a{
-    color: black;
+    color: white;
 }
 
 .landingoptions li a:hover{
     text-decoration: none;
     opacity: 0.7;
-    color: red;
+    color: white;
 }
 
 
@@ -77,18 +77,18 @@ body{
 .formpage{
     height: 100vh;
     padding-top: 5vh;
-    background: #ffdada;
+    background: #973f3f;
 }
 
 .loginformpage{
     height: 100vh;
     padding-top: 10vh;
-    background: #ffdbdb;
+    background: #973f3f;
 }
 
 .homepage{
     min-height: 100vh;
-    background: #ffdbdb;
+    background: #973f3f;
 }
 
 nav{
@@ -168,7 +168,7 @@ nav{
 }
 
 .createmeetingcolumn:hover{
-    background-color: #ffccbf;
+    background-color: #7c2b17;
 }
 
 .joinmeetingcolumn{
@@ -178,7 +178,7 @@ nav{
 }
 
 .joinmeetingcolumn:hover{
-    background-color: #ffccbf;
+    background-color: #7c2b17;
 }
 
 .belowcreateform{
@@ -234,6 +234,10 @@ nav{
     padding-bottom: 1vh;
 }
 
+.formheading h1{
+    color: white;
+}
+
 .star{
     color: red;
 }
@@ -260,7 +264,7 @@ nav{
 }
 
 .chat{
-    background: #ffcaca;
+    background: #973f3f;
     height: 80vh;
     overflow-y: scroll;
     padding: 3vh 10px 0 10px;
@@ -284,7 +288,7 @@ nav{
 
 .chatheading{
     height: 10vh;
-    background: #a33535;
+    background: #5c0505;
     padding-top: 3vh;
     border-bottom: 3px double black;
     color: white;
