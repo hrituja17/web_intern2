@@ -173,7 +173,7 @@ nav{
 
 .joinmeetingcolumn{
     padding: 2vh;
-    border-left: 1px solid black;
+    border-left: 1px solid white;
     transition-duration: 0.3s;
 }
 
@@ -185,6 +185,61 @@ nav{
     margin-top: 2vh;
     display: none;
     transition-duration: 0.3s;
+}
+
+
+.meetingcolumn{
+    min-height: 40vh;
+    border-radius: 5px;
+    padding: 4vh;
+    transition-duration: 0.3s;
+}
+
+.meetingcolumn:hover{
+    background-color: #c22f0a;
+    text-decoration: none;
+    transform: translateY(-2%);
+    box-shadow: 0 5px 10px -2px black;
+}
+
+
+.meetingcolumn h4, h5{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.webinarcolumn{
+    padding: 4vh;
+    min-height: 40vh;
+    transition-duration: 0.3s;
+    border-radius: 5px;
+}
+
+.webinarcolumn:hover{
+    background-color: #c22f0a;
+    text-decoration: none;
+    transform: translateY(-2%);
+    box-shadow: 0 5px 10px -2px black;
+}
+
+.webinarcolumn h4, h5{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr.styledhr{
+    background-color: white;
+}
+
+.meetingimgholder{
+    margin: 3vh 0;
+}
+
+.meetingimg{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px -3px black;
 }
 
 .button{
@@ -373,6 +428,12 @@ nav{
     height: auto;
     width: 60%;
 }
+
+.mainvideowebinar video{
+    height: auto;
+    width: 90%;
+}
+
 
 .video-row{
     column-count: 4;
