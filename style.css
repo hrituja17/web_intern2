@@ -381,6 +381,11 @@ hr.styledhr{
     font-size: 18px;
 }
 
+.username h5{
+    color:black;
+}
+
+
 .message-field{
     width: 100%;
     padding: 10px;
