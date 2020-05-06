@@ -77,18 +77,18 @@ body{
 .formpage{
     height: 100vh;
     padding-top: 5vh;
-    background: #973f3f;
+    background: #900C0C;
 }
 
 .loginformpage{
     height: 100vh;
     padding-top: 10vh;
-    background: #973f3f;
+    background: #900C0C;
 }
 
 .homepage{
     min-height: 100vh;
-    background: #973f3f;
+    background: #900C0C;
 }
 
 nav{
@@ -128,7 +128,7 @@ nav{
     margin: 0 auto;
     padding: 20px 30px 10px 30px;
     border-radius: 2px;
-    box-shadow: 0 2px 10px -2px black;
+    box-shadow: 0 2px 10px 1px #000000;
     background: white;
 }
 
@@ -138,7 +138,7 @@ nav{
     margin: 0 auto;
     padding: 40px 30px 25px 30px;
     border-radius: 2px;
-    box-shadow: 0 2px 10px -2px black;
+    box-shadow: 0 2px 10px 1px #000000;
     background: white;
 }
 
@@ -168,7 +168,7 @@ nav{
 }
 
 .createmeetingcolumn:hover{
-    background-color: #7c2b17;
+    background-color: #cc4928;
 }
 
 .joinmeetingcolumn{
@@ -178,7 +178,7 @@ nav{
 }
 
 .joinmeetingcolumn:hover{
-    background-color: #7c2b17;
+    background-color: #cc4928;
 }
 
 .belowcreateform{
@@ -264,7 +264,7 @@ nav{
 }
 
 .chat{
-    background: #973f3f;
+    background: #e48d8d;
     height: 80vh;
     overflow-y: scroll;
     padding: 3vh 10px 0 10px;
@@ -275,7 +275,7 @@ nav{
 }
 
 ::-webkit-scrollbar-track{
-    background: #fda8a8;
+    background: #900C0C;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -288,7 +288,7 @@ nav{
 
 .chatheading{
     height: 10vh;
-    background: #5c0505;
+    background: #900C0C;
     padding-top: 3vh;
     border-bottom: 3px double black;
     color: white;
