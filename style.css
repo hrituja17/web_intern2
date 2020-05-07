@@ -387,6 +387,11 @@ hr.styledhr{
     background: snow;
     padding: 7px 12px;
     min-height: 15px;
+    cursor: pointer;
+}
+
+.complete{
+    background-color: lightgreen;
 }
 
 .textbox{
@@ -458,12 +463,60 @@ hr.styledhr{
 .share{
     position: absolute;
     top: 40px;
-    right: 20px;
+    right: 15px;
     font-size: 25px;
     border: none;
     background-color: white;
 }
 
+.share:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+.upload{
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.upload:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+
+.mode{
+    position: absolute;
+    top: 115px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.mode:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+
+.modeexam{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.modeexam:hover{
+    color: black;
+    opacity: 0.6;
+}
 
 .mainvideo video{
     height: auto;
@@ -480,18 +533,36 @@ hr.styledhr{
     column-count: 4;
 }
 
+.video-row-exam{
+    column-count: 4;
+}
+
 .video-column{
     width: 25%;
 }
 
 .video-column video{
-    height: 180px;
-    width: 200px;
+    height: 160px;
+    width: 160px;
 }
 
 .bars{
     display: none;
 }
+
+.quesbox{
+    background-color: #fdf5eb;
+}
+
+.quesline{
+    margin-top: 10px;
+}
+
+.ques{
+    font-size: 25px;
+    font-weight: bold;
+}
+
 
 @media only screen and (max-width: 768px){
     .logo{
@@ -561,10 +632,20 @@ hr.styledhr{
     .videoarea{
         height: 80vh;
         transition-duration: 0.3s;
+        overflow-y: scroll;
     }
+
 
     .video-row{
         display: none;
+    }
+
+    .video-row-exam{
+        column-count: 2;
+    }
+
+    .video-column{
+        width: 50%;
     }
 
     .mainvideo{
