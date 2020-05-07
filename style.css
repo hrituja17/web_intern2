@@ -196,7 +196,7 @@ nav{
 }
 
 .meetingcolumn:hover{
-    background-color: #c22f0a;
+    background-color: #f58468;
     text-decoration: none;
     transform: translateY(-2%);
     box-shadow: 0 5px 10px -2px black;
@@ -206,6 +206,7 @@ nav{
 .meetingcolumn h4, h5{
     color: white;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 .webinarcolumn{
@@ -216,7 +217,7 @@ nav{
 }
 
 .webinarcolumn:hover{
-    background-color: #c22f0a;
+    background-color: #f58468;
     text-decoration: none;
     transform: translateY(-2%);
     box-shadow: 0 5px 10px -2px black;
@@ -234,6 +235,7 @@ hr.styledhr{
 .meetingimgholder{
     margin: 3vh 0;
 }
+
 
 .meetingimg{
     height: 200px;
