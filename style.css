@@ -196,7 +196,7 @@ nav{
 }
 
 .meetingcolumn:hover{
-    background-color: #f58468;
+    background-color: #c22f0a;
     text-decoration: none;
     transform: translateY(-2%);
     box-shadow: 0 5px 10px -2px black;
@@ -217,7 +217,7 @@ nav{
 }
 
 .webinarcolumn:hover{
-    background-color: #f58468;
+    background-color: #c22f0a;
     text-decoration: none;
     transform: translateY(-2%);
     box-shadow: 0 5px 10px -2px black;
