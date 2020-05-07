@@ -187,12 +187,41 @@ nav{
     transition-duration: 0.3s;
 }
 
+.back{
+    margin-bottom: 15px;
+}
+
+.button-back{
+    color: black;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 5px 10px -2px black;
+    transition-duration: 0.5s;
+}
+
+.button-back:hover{
+    box-shadow: none;
+    color: black;
+    text-decoration: none;
+}
+
+.smaller{
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: black !important;
+    margin-left: 1vw;
+    font-weight: normal;
+}
+
 
 .meetingcolumn{
     min-height: 40vh;
     border-radius: 5px;
     padding: 4vh;
     transition-duration: 0.3s;
+    box-shadow: 0 1px 15px -6px black;
 }
 
 .meetingcolumn:hover{
@@ -214,13 +243,14 @@ nav{
     min-height: 40vh;
     transition-duration: 0.3s;
     border-radius: 5px;
+    box-shadow: 0 3px 10px -8px black;
 }
 
 .webinarcolumn:hover{
     background-color: #c22f0a;
     text-decoration: none;
-    transform: translateY(-2%);
-    box-shadow: 0 5px 10px -2px black;
+    transform: translateY(-1%);
+    box-shadow: 0 3px 10px -2px black;
 }
 
 .webinarcolumn h4, h5{

@@ -14,10 +14,10 @@
         <nav class="navbar navbar-expand-lg navbar-light p-4">
             <div class="container">
                 <a class="navbar-brand" href="home.html">RedPositive</a>
+                <a class="navbar-brand smaller" href="account.html">Welcome, User</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-              
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                   <ul class="navbar-nav ml-auto mt-15 mt-lg-0">
                     <li class="nav-item active">
@@ -34,13 +34,16 @@
             </div>
         </nav>
         <div class="container">
+            <div class="text-left back">
+                <a class="button-back" href="home.html"><i class="fa fa-arrow-left"></i></a>
+            </div>
             <div class="row">
                 <div onmouseenter="createMeetingMessage()" class="col-sm-12 col-md-6 createmeetingcolumn">
                     <div class="formheading text-center">
                         <h1>Host a Meeting</h1>
                     </div>
                     <div class="createmeetingformbox">
-                        <form action="/createmeeting" method="post">
+                        <form action="meeting.html">
                             <div class="form-group">
                                 <label for="meetingPurpose">Meeting Name</label>
                                 <input class="form-control" type="text" name="meetingPurpose" placeholder="Enter meeting name.." required>
@@ -67,13 +70,13 @@
                         <h1>Join a Meeting</h1>
                     </div>
                     <div class="joinmeetingformbox">
-                        <form action="/joinmeeting" method="post">
+                        <form action="meeting.html">
                             <div class="form-group">
                                 <label for="meetingId">Meeting ID</label>
                                 <input class="form-control" type="text" name="meetingId" placeholder="Enter meeting ID.." required>
                             </div>
                             <div class="form-group">
-                                <label for="meetingId">Code</label>
+                                <label for="meetingCode">Code</label>
                                 <input class="form-control" type="password" name="meetingCode" placeholder="Enter meeting code.." required>
                             </div>
                             <div class="form-group">
