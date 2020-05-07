@@ -386,6 +386,10 @@ hr.styledhr{
 }
 
 
+.have{
+    color: black;
+}
+
 .message-field{
     width: 100%;
     padding: 10px;
@@ -492,8 +496,13 @@ hr.styledhr{
     .joinmeetingcolumn:hover{
         background-color: transparent;
     }
-    
+
+    .landingoptions li a{
+        color: black;
+    }
 }
+
+
 
 @media only screen and (max-width: 992px){
 
