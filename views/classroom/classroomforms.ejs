@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Forms | RedPositive Services Pvt. Ltd.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<body>
+    <div class="homepage">
+        <nav class="navbar navbar-expand-lg navbar-light p-4">
+            <div class="container">
+                <a class="navbar-brand" href="/home">RedPositive</a>
+                <a class="navbar-brand smaller" href="#">Welcome <%=name %></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav ml-auto mt-15 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="text-left back">
+                <a class="button-back" href="/home"><i class="fa fa-arrow-left"></i></a>
+            </div>
+            <div class="row">
+                <div onmouseenter="createMeetingMessage()" class="col-sm-12 col-md-6 createmeetingcolumn">
+                    <div class="formheading text-center">
+                        <h1>Create a Classroom</h1>
+                    </div>
+                    <div class="createmeetingformbox">
+                        <form action="/classroom/createclassroom" method="post">
+                            <div class="form-group">
+                                <label for="classroomPurpose">Classroom Name</label>
+                                <input class="form-control" type="text" name="classroomPurpose" placeholder="Enter classroom name.." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="classroomId">Classroom ID</label>
+                                <input class="form-control" type="text" name="classroomId" placeholder="Enter classroom ID.." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="classroomCode">Code</label>
+                                <input class="form-control" type="password" name="classroomCode" placeholder="Enter classroom code.." required>
+                            </div>
+                            <div class="form-group">
+                                <button class="button button-submit btn-block">Create Classroom</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="text-center belowcreateform">
+                        <small id="createdesc">hi</small>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 joinmeetingcolumn">
+                    <div class="formheading text-center">
+                        <h1>Join a Classroom</h1>
+                    </div>
+                    <div class="joinmeetingformbox">
+                        <form action="/classroom/joinclassroom" method="post">
+                            <div class="form-group">
+                                <label for="classroomId">Classroom ID</label>
+                                <input class="form-control" type="text" name="classroomId" placeholder="Enter classroom ID.." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="classroomCode">Code</label>
+                                <input class="form-control" type="password" name="classroomCode" placeholder="Enter classroom code.." required>
+                            </div>
+                            <div class="form-group">
+                                <button class="button button-warning btn-block">Join Classroom</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/validation.js"></script>
+    <script src="js/dynamic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

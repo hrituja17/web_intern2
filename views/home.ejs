@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | RedPositive Services Pvt. Ltd.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<body>
+    <div class="homepage">
+        <nav class="navbar navbar-expand-lg navbar-light p-4">
+            <div class="container">
+                <a class="navbar-brand" href="/home">RedPositive</a>
+                <a class="navbar-brand smaller" href="#">Welcome <%=name %></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav ml-auto mt-15 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <a href="/webinar" class="col-sm-12 col-md-4 webinarcolumn">
+                    <div>
+                        <div class="formheading text-center">
+                            <h1>Webinars</h1>
+                        </div>
+                        <hr class="styledhr">
+                        <div class="text-center meetingimgholder">
+                            <img class="meetingimg" src="images/webinarimg.jpg" alt="Webinars image">
+                        </div>
+                        <div class="webinarsdesc text-center">
+                            <h5><i>Urgent webinar?</i></h5>
+                            <h5><i>Hurry, don't miss out!</i></h5>
+                            <hr class="styledhr">
+                            <h4>All your webinars are in here..</h4>
+                        </div>
+                    </div>
+                </a>
+                <a href="/meeting" id="changeActivate" class="col-sm-12 col-md-4 meetingcolumn">
+                    <div>
+                        <div class="formheading text-center">
+                            <h1 id="changecolor">Meetings</h1>
+                        </div>
+                        <hr class="styledhr">
+                        <div class="text-center meetingimgholder">
+                            <img class="meetingimg" src="images/meetingimg.jpg" alt="Meetings image">
+                        </div>
+                        <div class="meetingsdesc text-center">
+                            <h5 id="changecolor"><i>Got a meeting to attend?</i></h5>
+                            <h5 id="changecolor"><i>Or are you the host?</i></h5>
+                            <hr class="styledhr">
+                            <h4 id="changecolor">We've got you covered..</h4>
+                        </div>
+                    </div>
+                </a> 
+                <a href="/classroom" class="col-sm-12 col-md-4 webinarcolumn">
+                    <div>
+                        <div class="formheading text-center">
+                            <h1>Classrooms</h1>
+                        </div>
+                        <hr class="styledhr">
+                        <div class="text-center meetingimgholder">
+                            <img class="meetingimg" src="images/classimg.jpg" alt="Classrooms image">
+                        </div>
+                        <div class="webinarsdesc text-center">
+                            <h5><i>Are you a student?</i></h5>
+                            <h5><i>Because, there's no age limit to learn.</i></h5>
+                            <hr class="styledhr">
+                            <h4>Join a classroom here..</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/validation.js"></script>
+    <script src="js/dynamic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

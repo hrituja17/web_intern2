@@ -1,0 +1,719 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Jost', sans-serif;
+}
+
+.landing{
+    position: relative;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.pricing{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+}
+
+.logo{
+    text-align: center;
+    padding-top: 40vh;
+    height: 100vh;
+}
+
+.heading{
+    color: #f83636;
+}
+
+.heading h1{
+    font-size: 50px;
+}
+
+.tagline{
+    color: grey;
+}
+
+.list{
+    height: 100vh;
+    padding-top: 30vh;
+    background: #900C0C;
+}
+
+.landingoptions li{
+    list-style: none;
+    font-size: 34px;
+    padding: 10px;
+}
+
+.landingoptions li a{
+    color: white;
+}
+
+.landingoptions li a:hover{
+    text-decoration: none;
+    opacity: 0.7;
+    color: white;
+}
+
+
+.pricelink{
+    color: #ff4444;
+    font-weight: bold;
+}
+
+.pricelink:hover{
+    text-decoration: none;
+    color: #ff4444;
+    opacity: 0.7;
+}
+
+#confirmpasswordHelp{
+    display: none;
+}
+
+.formpage{
+    height: 100vh;
+    padding-top: 5vh;
+    background: #900C0C;
+}
+
+.loginformpage{
+    height: 100vh;
+    padding-top: 10vh;
+    background: #900C0C;
+}
+
+.homepage{
+    min-height: 100vh;
+    background: #900C0C;
+}
+
+nav{
+    margin-bottom: 10vh;
+    box-shadow: 0 5px 10px -4px black;
+    background-color: white;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    color: red !important;
+    font-weight: bold;
+} 
+
+.navbar-brand:hover{
+    color: red;
+    opacity: 0.6;
+}
+
+.nav-link{
+    font-size: 23px;
+    transition-duration: 0.4s;
+    color: black;
+    border-radius: 15px;
+    margin: 0 1px;
+}
+
+.nav-link:hover{
+    background-color: #fd5050;
+    border-radius: 15px;
+    color: white !important;
+}
+
+.formbox{
+    width: 50%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 20px 30px 10px 30px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px 1px #000000;
+    background: white;
+}
+
+.loginformbox{
+    width: 50%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 40px 30px 25px 30px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px 1px #000000;
+    background: white;
+}
+
+.createmeetingformbox{
+    width: 80%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 40px 30px 25px 30px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px -2px black;
+    background: white;
+}
+
+.joinmeetingformbox{
+    width: 80%;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 40px 30px 25px 30px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px -2px black;
+    background: white;
+}
+
+.createmeetingcolumn{
+    padding: 4vh;
+    transition-duration: 0.3s;
+}
+
+.createmeetingcolumn:hover{
+    background-color: #cc4928;
+}
+
+.joinmeetingcolumn{
+    padding: 2vh;
+    border-left: 1px solid white;
+    transition-duration: 0.3s;
+}
+
+.joinmeetingcolumn:hover{
+    background-color: #cc4928;
+}
+
+.belowcreateform{
+    margin-top: 2vh;
+    display: none;
+    transition-duration: 0.3s;
+}
+
+.back{
+    margin-bottom: 15px;
+}
+
+.button-back{
+    color: black;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 5px 10px -2px black;
+    transition-duration: 0.5s;
+}
+
+.button-back:hover{
+    box-shadow: none;
+    color: black;
+    text-decoration: none;
+}
+
+.smaller{
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    color: black !important;
+    margin-left: 1vw;
+    font-weight: normal;
+}
+
+
+.meetingcolumn{
+    min-height: 40vh;
+    border-radius: 5px;
+    padding: 4vh;
+    transition-duration: 0.3s;
+    box-shadow: 0 1px 15px -6px black;
+}
+
+.meetingcolumn:hover{
+    background-color: #c22f0a;
+    text-decoration: none;
+    transform: translateY(-2%);
+    box-shadow: 0 5px 10px -2px black;
+}
+
+
+.meetingcolumn h4, h5{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.webinarcolumn{
+    padding: 4vh;
+    min-height: 40vh;
+    transition-duration: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px -8px black;
+}
+
+.webinarcolumn:hover{
+    background-color: #c22f0a;
+    text-decoration: none;
+    transform: translateY(-1%);
+    box-shadow: 0 3px 10px -2px black;
+}
+
+.webinarcolumn h4, h5{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr.styledhr{
+    background-color: white;
+}
+
+.meetingimgholder{
+    margin: 3vh 0;
+}
+
+
+.meetingimg{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px -3px black;
+}
+
+.button{
+    border: none;
+    color: white;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-weight: bold;
+    box-shadow: 0 3px 5px -2px black;
+    transition-duration: 1s;
+}
+
+.button:hover{
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+.button-submit{
+    background: #418f02;
+    color: white;
+}
+
+.button-login{
+    background: #5ca805;
+    color: white;
+}
+
+.button-warning{
+    color: black;
+    background: #ffef12;
+}
+
+.top{
+    margin-top: 20px;
+}
+
+.form-control{
+    box-shadow: 0 0 5px -1px #ff9f9f;
+}
+
+.form-group label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.formheading{
+    padding-bottom: 1vh;
+}
+
+.formheading h1{
+    color: white;
+}
+
+.star{
+    color: red;
+}
+
+.red{
+    color: red;
+}
+
+.red:hover{
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+.green{
+    color: #047004;
+    font-weight: bold;
+}
+
+.green:hover{
+    text-decoration: none;
+    color: #047004;
+    font-weight: normal;
+}
+
+.chat{
+    background: #e48d8d;
+    height: 80vh;
+    overflow-y: scroll;
+    padding: 3vh 10px 0 10px;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #900C0C;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #fd5050;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #a53c3c;
+}
+
+.chatheading{
+    height: 10vh;
+    background: #900C0C;
+    padding-top: 3vh;
+    border-bottom: 3px double black;
+    color: white;
+}
+
+.chatmessage{
+    border-radius: 5px;
+    margin-top: 10px;
+    background: snow;
+    padding: 7px 12px;
+    min-height: 15px;
+    cursor: pointer;
+}
+
+.complete{
+    background-color: lightgreen;
+}
+
+.textbox{
+    background: white;
+    height: 10vh;
+    padding: 10px 5px 5px 5px;
+    position: relative;
+}
+
+.buttons{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+.buttons button{
+    border: none;
+    background: white;
+    font-size: 20px;
+    transition-duration: 1s;
+}
+
+.buttons button:hover{
+    font-size: 18px;
+}
+
+.username h5{
+    color:black;
+}
+
+
+.have{
+    color: black;
+}
+
+.message-field{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 0 5px -1px #ff4444;
+}
+
+.message-field:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+
+.mainvideo{
+    padding: 15px;
+    position: relative;
+}
+
+.out{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.out:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+.share{
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    font-size: 25px;
+    border: none;
+    background-color: white;
+}
+
+.share:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+.upload{
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.upload:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+
+.mode{
+    position: absolute;
+    top: 115px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.mode:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+
+.modeexam{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 25px;
+    border: none;
+    color: black;
+}
+
+.modeexam:hover{
+    color: black;
+    opacity: 0.6;
+}
+
+.mainvideo video{
+    height: auto;
+    width: 60%;
+}
+
+.mainvideowebinar video{
+    height: auto;
+    width: 90%;
+}
+
+
+.video-row{
+    column-count: 4;
+}
+
+.video-row-exam{
+    column-count: 4;
+}
+
+.video-column{
+    width: 25%;
+}
+
+.video-column video{
+    height: 160px;
+    width: 160px;
+}
+
+.bars{
+    display: none;
+}
+
+.quesbox{
+    background-color: #fdf5eb;
+}
+
+.quesline{
+    margin-top: 10px;
+}
+
+.ques{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px){
+    .logo{
+        height: 50px;
+        padding-top: 15vh;
+    }
+
+    .list{
+        padding-top: 40vh;
+        text-align: center;
+        background: none;
+        height: 50vh;
+    }
+
+    .pricing{
+        right: 10%;
+    }
+    
+    .homepage{
+        padding-bottom: 10vh;
+    }
+
+    .joinmeetingcolumn{
+        margin-top: 10vh;
+        border-left: none;
+        border-top: 1px solid white;
+        padding-top: 2vh;
+    }
+
+    .createmeetingcolumn:hover{
+        background-color: transparent;
+    }
+    
+    .joinmeetingcolumn:hover{
+        background-color: transparent;
+    }
+
+    .landingoptions li a{
+        color: black;
+    }
+}
+
+
+
+@media only screen and (max-width: 992px){
+
+    .formheading h1{
+        font-size: 28px;
+    }
+
+    .formpage{
+        height: 110vh;
+    }
+
+    .formbox{
+        width: 95%;
+    }
+
+    .loginformpage{
+        height: 110vh;
+    }
+
+    .loginformbox{
+        width: 95%;
+    }
+
+    .videoarea{
+        height: 80vh;
+        transition-duration: 0.3s;
+        overflow-y: scroll;
+    }
+
+
+    .video-row{
+        display: none;
+    }
+
+    .video-row-exam{
+        column-count: 2;
+    }
+
+    .video-column{
+        width: 50%;
+    }
+
+    .mainvideo{
+        padding-top: 20vh;
+    }
+
+    .mainvideo video{
+        height: auto;
+        width: 70%;
+    }
+
+    .chat{
+        height: 0;
+        padding: 0 10px;
+        z-index: 1;
+    }
+
+    .chatheading h3{
+        font-size: 23px;
+    }
+
+    .chatheading{
+        z-index: 1;
+        position: relative;
+        border-radius: 3px;
+    }
+
+    .bars{
+        position: absolute;
+        display: block;
+        top: 15px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    .moreheight{
+        height: 50vh;
+    }
+
+    .lessheight{
+        height: 30vh;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1400px){
+    .formheading h1{
+        font-size: 28px;
+    }
+
+    .formpage{
+        height: 110vh;
+    }
+
+    .formbox{
+        width: 70%;
+    }
+
+    .loginformpage{
+        height: 110vh;
+    }    
+
+    .loginformbox{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 1160px){
+    .landingoptions li{
+        font-size: 23px;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="video chat app, screen share, live chat">
+    <title>Sign Up | RedPositive Services Pvt. Ltd</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<body>
+    <div class="formpage">
+        <div class="container">
+            <div class="formheading text-center">
+                <h1>Create an account to proceed..</h1>
+            </div>
+            <div class="formbox">
+                <!-- //error if user already exists -->
+                <% if(typeof errors != 'undefined') { %>
+                    <% errors.forEach(function(error) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%= error.msg %>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <strong></strong> 
+                        </div>
+                    <% }); %>
+                <% } %>
+                <!-- //flash-message ends -->
+                <form action="/register" method="post">
+                    <div class="form-group">
+                        <label for="fname">First Name <span class="star">&#9733;</span></label>
+                        <input id="fname" onchange="fnameValidation()" type="text" name="fname" class="form-control" placeholder="First name.." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name <span class="star">&#9733;</span></label>
+                        <input id="lname" onchange="lnameValidation()" type="text" name="lname" class="form-control" placeholder="Last name.." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="star">&#9733;</span></label>
+                        <input id="email" onchange="emailValidation()" type="email" name="email" class="form-control" placeholder="Your email.." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password <span class="star">&#9733;</span></label>
+                        <input id="password" onchange="passwordValidation()" type="password" name="password" class="form-control" placeholder="Enter a strong password.." required>
+                        <small id="passwordHelp" class="form-text text-muted">Minimum 6 characters long; include small, capital letters, & atleast 1 digit & 1 special character.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmpassword">Confirm Password <span class="star">&#9733;</span></label>
+                        <input id="confirmpassword" onchange="cpasswordValidation()" type="password" name="confirmpassword" class="form-control" placeholder="Re-enter password.." required>
+                        <small id="confirmpasswordHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="button button-submit btn-block">Sign Up</button>
+                    </div>
+                    <div class="text-center">
+                        <h5 class="have">Have an account? <a class="red" href="/login">Sign In</a></h5>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/validation.js"></script>
+    <!-- bootstrap js to use flash messages -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
