@@ -91,6 +91,12 @@ body{
     background: #900C0C;
 }
 
+.aboutpage{
+    min-height: 100vh;
+    background: #900C0C;
+    padding-top: 15vh;
+}
+
 nav{
     margin-bottom: 10vh;
     box-shadow: 0 5px 10px -4px black;
