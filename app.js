@@ -1,11 +1,11 @@
 require('dotenv').config();
 var express = require("express");
-var expressLayouts = require('express-ejs-layouts'); 
 var app = express();
 var bodyparser = require("body-parser");
 var mongoose = require("mongoose");
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
+var methodOverride = require("method-override");
 var bcrypt = require('bcryptjs');
 var flash = require('connect-flash');
 var session = require('express-session');
@@ -15,22 +15,30 @@ var crypto = require("crypto");
 app.locals.moment = require('moment');
 // Model
 var User = require("./models/user");
+var Meeting = require("./models/meeting");
+var MeetingUser = require("./models/meetinguser");
+
+
 
 // Routes
 var webinarRoutes   = require("./routes/webinar"),
     meetingRoutes    = require("./routes/meeting"),
     classroomRoutes= require("./routes/classroom");
+    profileRoutes = require("./routes/profile");
 
 
-
-mongoose.connect("mongodb://localhost:27017/version1", {useNewUrlParser:true})
+mongoose.connect("mongodb://localhost:27017/v4", {useNewUrlParser:true,useUnifiedTopology: true,useFindAndModify:false,useCreateIndex: true })
     .then(()=>console.log('MongoDB Connected....'))
     .catch(err => console.log(err));
 app.use(bodyparser.urlencoded({extended: true}));
 //Express session
 
 app.set("view engine","ejs");
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+
+
+
 //===============================================
 //PASSPORT CONFIGURATION
 //===============================================
@@ -44,9 +52,11 @@ app.use(passport.session());
 app.use(flash());
 //Global vars for flash
 app.use((req,res,next)=>{
+    res.locals.currentUser = req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
     next();
 });
 //ensure Authentication
@@ -61,12 +71,12 @@ app.get("/", function(req, res){
 
 //About route
 app.get("/about", function(req, res){
-    res.send("About Page");
+    res.render("about");
 });
 
 //Pricing Route
 app.get("/pricing", function(req, res){
-    res.send("Pricing route");
+    res.render("pricing");
 });
 
 // show register form
@@ -78,12 +88,21 @@ app.get("/register", function(req, res){
 app.post('/register',function(req,res){
     let errors = [];
     const {fname,lname,email,password,confirmpassword} = req.body;
+    // console.log(req.body);
+    if(!email || !fname || !lname || !password || !confirmpassword){
+      errors.push({ msg: 'Please enter all the required fields !!' });
+    }
     if (password != confirmpassword) {
         errors.push({ msg: 'Passwords do not match' });
     }
-    if (password.length < 6) {
-        errors.push({ msg: 'Password must be at least 6 characters' });
-      }
+    if (password.length < 10) {
+        errors.push({ msg: 'Password must be at least 10 characters' });
+      } else if(password.length >= 10){
+          var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{10,})");
+          if(!strongRegex.test(password)){
+            errors.push({ msg: 'Password does not match the specified pattern' });  
+          }
+        }
     
       if (errors.length > 0) {
         res.render('register', {
@@ -106,14 +125,27 @@ app.post('/register',function(req,res){
                     email,
                     password
                 });
+                //encrypting details
+                var id = newUser._id;
+                var key = id.toString();
+                var fcipher = crypto.createCipher('aes-256-cbc',key);
+                var lcipher = crypto.createCipher('aes-256-cbc',key);
+                var fnameCrypted = fcipher.update(fname,'utf8','hex');
+                var lnameCrypted = lcipher.update(lname,'utf8','hex');
+                fnameCrypted += fcipher.final('hex');
+                lnameCrypted += lcipher.final('hex');
                 //Hash Password
                 bcrypt.genSalt(10,(err,salt)=>bcrypt.hash(newUser.password,salt,(err,hash)=>{
                     if(err) throw err;
                     //set password to hash
                     newUser.password = hash;
+                    newUser.fname = fnameCrypted;
+                    newUser.lname = lnameCrypted;
+                    fnameCrypted = null;
+                    lnameCrypted = null;
                     newUser.save()
                         .then(user => {
-                            req.flash('success_msg','You are now registered and can login');
+                            req.flash('success','You are now registered and can login');
                             res.redirect("/login");
                         })
                         .catch(err=>console.log(err));
@@ -163,6 +195,7 @@ passport.deserializeUser(function(id,done){
 app.post("/login", function(req, res,next){
     passport.authenticate('local',{
         successRedirect: '/home',
+        successMessage: 'You are now logged in',
         failureRedirect: '/login',
         failureFlash: true
     })(req,res,next);
@@ -171,8 +204,18 @@ app.post("/login", function(req, res,next){
 
 //Home route
 app.get('/home',ensureAuthenticated,(req,res)=>{
-    name = req.user.fname+' '+req.user.lname;
-    res.render('home',{name:name});
+  var id = req.user._id;
+  var key = id.toString();
+  var fdcipher = crypto.createDecipher('aes-256-cbc',key);
+  var ldcipher = crypto.createDecipher('aes-256-cbc',key);
+  var fnameDcrypted = fdcipher.update(req.user.fname,'hex','utf8');
+  var lnameDcrypted = ldcipher.update(req.user.lname,'hex','utf8');
+  fnameDcrypted += fdcipher.final('utf8');
+  lnameDcrypted += ldcipher.final('utf8');     
+  name = fnameDcrypted +' '+ lnameDcrypted;
+  fnameDcrypted = null;
+  lnameDcrypted = null;
+  res.render('home',{name:name, user: req.user});
 });
 
 // Forgot Password Route
@@ -192,7 +235,7 @@ app.post('/forgot', function(req, res, next) {
       function(token, done) {
         User.findOne({ email: req.body.email }, function(err, user) {
           if (!user) {
-            req.flash('error', 'No account with that email address exists.');
+            req.flash('error_msg', 'No account with that email address exists.');
             return res.redirect('/forgot');
           }
   
@@ -222,7 +265,7 @@ app.post('/forgot', function(req, res, next) {
             'If you did not request this, please ignore this email and your password will remain unchanged.\n'
         };
         smtpTransport.sendMail(mailOptions, function(err) {
-          console.log('mail sent');
+          // console.log('mail sent');
           req.flash('success_msg', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
           done(err, 'done');
         });
@@ -237,7 +280,7 @@ app.post('/forgot', function(req, res, next) {
 app.get('/reset/:token', function(req, res) {
     User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
       if (!user) {
-        req.flash('error', 'Password reset token is invalid or has expired.');
+        req.flash('error_msg', 'Password reset token is invalid or has expired.');
         return res.redirect('/forgot');
       }
       res.render('reset', {token: req.params.token});
@@ -249,7 +292,7 @@ app.post('/reset/:token', function(req, res) {
       function(done) {
         User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
           if (!user) {
-            req.flash('error', 'Password reset token is invalid or has expired.');
+            req.flash('error_msg', 'Password reset token is invalid or has expired.');
             return res.redirect('back');
           }
           if(req.body.password === req.body.confirm) {
@@ -264,7 +307,7 @@ app.post('/reset/:token', function(req, res) {
                   });
             }))
           } else {
-              req.flash("error", "Passwords do not match.");
+              req.flash("error_msg", "Passwords do not match.");
               return res.redirect('back');
           }
         });
@@ -297,7 +340,7 @@ app.post('/reset/:token', function(req, res) {
 // Logout Handle
 app.get('/logout',(req,res)=>{
     req.logOut();
-    req.flash('success_msg','You are logged out');
+    req.flash('success','You are logged out');
     res.redirect('/login');
 });
 
@@ -305,7 +348,7 @@ app.get('/logout',(req,res)=>{
 app.use("/meeting",meetingRoutes);
 app.use("/webinar",webinarRoutes);
 app.use("/classroom",classroomRoutes);
-
+app.use("/profile", profileRoutes);
 
 app.listen(5000,function(){
     console.log("The Server is running at port 5000");

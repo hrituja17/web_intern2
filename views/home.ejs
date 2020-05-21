@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | RedPositive Services Pvt. Ltd.</title>
+    <link rel="shortcut icon" type="image/PNG" href="images/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
 </head>
 <body>
     <div class="homepage">
         <nav class="navbar navbar-expand-lg navbar-light p-4">
             <div class="container">
                 <a class="navbar-brand" href="/home">RedPositive</a>
-                <a class="navbar-brand smaller" href="#">Welcome <%=name %></a>
+                <a class="navbar-brand smaller" href="/profile/<%= user._id %>">Welcome <%=name %></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -39,7 +40,7 @@
             <div class="row">
                 <a href="/webinar" class="col-sm-12 col-md-4 webinarcolumn">
                     <div>
-                        <div class="formheading text-center">
+                        <div class="homeheading text-center">
                             <h1>Webinars</h1>
                         </div>
                         <hr class="styledhr">
@@ -56,8 +57,8 @@
                 </a>
                 <a href="/meeting" id="changeActivate" class="col-sm-12 col-md-4 meetingcolumn">
                     <div>
-                        <div class="formheading text-center">
-                            <h1 id="changecolor">Meetings</h1>
+                        <div class="homeheading text-center">
+                            <h1>Meetings</h1>
                         </div>
                         <hr class="styledhr">
                         <div class="text-center meetingimgholder">
@@ -73,7 +74,7 @@
                 </a> 
                 <a href="/classroom" class="col-sm-12 col-md-4 webinarcolumn">
                     <div>
-                        <div class="formheading text-center">
+                        <div class="homeheading text-center">
                             <h1>Classrooms</h1>
                         </div>
                         <hr class="styledhr">

@@ -1,6 +1,7 @@
 var User = require("../models/user");
 var express = require("express");
 var router  = express.Router();
+var crypto = require("crypto");
 //ensure Authentication
 var {ensureAuthenticated} = require('../middleware/auth');
 
@@ -9,8 +10,18 @@ var {ensureAuthenticated} = require('../middleware/auth');
 
  // classroom Form Home Page
 router.get("/",ensureAuthenticated, function(req, res){
-    name = req.user.fname+' '+req.user.lname;
-    res.render("classroom/classroomforms", {name:name}); 
+    var id = req.user._id;
+    var key = id.toString();
+    var fdcipher = crypto.createDecipher('aes-256-cbc',key);
+    var ldcipher = crypto.createDecipher('aes-256-cbc',key);
+    var fnameDcrypted = fdcipher.update(req.user.fname,'hex','utf8');
+    var lnameDcrypted = ldcipher.update(req.user.lname,'hex','utf8');
+    fnameDcrypted += fdcipher.final('utf8');
+    lnameDcrypted += ldcipher.final('utf8');     
+    name = fnameDcrypted +' '+ lnameDcrypted;
+    fnameDcrypted = null;
+    lnameDcrypted = null;
+    res.render("classroom/classroomforms", {name:name, user: req.user}); 
 });
 
 

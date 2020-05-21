@@ -36,15 +36,15 @@ function emailValidation(){
 }
 
 function passwordValidation(){
-    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})");
-    var mediumRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
-    var weakRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.{6,})");
-    var capitalWeak = new RegExp("^(?=.*[A-Z])(?=.{6,})");
-    var smallWeak = new RegExp("^(?=.*[a-z])(?=.{6,})");
-    if (pwd.value.length < 6){
+    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{10,})");
+    var mediumRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{10,})");
+    var weakRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.{10,})");
+    var capitalWeak = new RegExp("^(?=.*[A-Z])(?=.{10,})");
+    var smallWeak = new RegExp("^(?=.*[a-z])(?=.{10,})");
+    if (pwd.value.length < 10){
         pwd.style.boxShadow = "0 0 6px 1px red";
         pwdHelp.innerHTML = "Too Short";
-    } else if(pwd.value.length >= 6){
+    } else if(pwd.value.length >= 10){
         if(strongRegex.test(pwd.value)){
             pwd.style.boxShadow = "0 0 6px 1px green";
             pwdHelp.innerHTML = "Strong";
@@ -60,7 +60,7 @@ function passwordValidation(){
 
 
 function cpasswordValidation(){
-    if (cpwd.value.length < 6){
+    if (cpwd.value.length < 10){
         cpwd.style.boxShadow = "0 0 6px 1px red";
         cpwdHelp.style.display = "block";
         cpwdHelp.innerHTML = "Passwords do not match.";

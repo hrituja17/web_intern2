@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webinar Forms | RedPositive Services Pvt. Ltd.</title>
+    <link rel="shortcut icon" type="image/PNG" href="../images/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
 </head>
 <body>
     <div class="homepage">
         <nav class="navbar navbar-expand-lg navbar-light p-4">
             <div class="container">
                 <a class="navbar-brand" href="/home">RedPositive</a>
-                <a class="navbar-brand smaller" href="#">Welcome <%=name %></a>
+                <a class="navbar-brand smaller" href="/profile/<%= user._id %>">Welcome <%=name %></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,50 +35,59 @@
             </div>
         </nav>
         <div class="container">
+            <div class="text-center">
+                <%- include ('../partials/messages') %>
+            </div>
             <div class="text-left back">
                 <a class="button-back" href="/home"><i class="fa fa-arrow-left"></i></a>
             </div>
+            
             <div class="row">
                 <div onmouseenter="createWebinarMessage()" class="col-sm-12 col-md-6 createmeetingcolumn">
-                    <div class="formheading text-center">
+                    <div class="homeheading text-center">
                         <h1>Host a Webinar</h1>
                     </div>
                     <div class="createmeetingformbox">
                         <form action="/webinar/createwebinar" method="post">
                             <div class="form-group">
-                                <label for="webinarName">Webinar Name</label>
-                                <input class="form-control" type="text" name="webinarName" placeholder="Enter webinar name.." required>
+                                <label for="webinarPurpose">Webinar Name</label>
+                                <input class="form-control" type="text" name="webinarPurpose" placeholder="Enter webinar name.." required autocomplete="off"> 
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="webinarId">Webinar ID</label>
                                 <input class="form-control" type="text" name="webinarId" placeholder="Enter webinar ID.." required>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="webinarCode">Code</label>
-                                <input class="form-control" type="password" name="webinarCode" placeholder="Enter webinar code.." required>
+                                <input class="form-control" type="password" name="webinarCode" placeholder="Enter webinar code.." required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="hostDate">Date</label>
+                                <input class="form-control" type="date" name="hostDate" placeholder="Enter webinar date.." required autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="hostTime">Time</label>
+                                <input class="form-control" type="time" name="hostTime" placeholder="Enter webinar time.." required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <button class="button button-submit btn-block">Create Webinar</button>
                             </div>
                         </form>
                     </div>
-                    <div class="text-center belowcreateform">
-                        <small id="createdesc">hi</small>
-                    </div>
                 </div>
                 <div class="col-sm-12 col-md-6 joinmeetingcolumn">
-                    <div class="formheading text-center">
+                    <div class="homeheading text-center">
                         <h1>Join a Webinar</h1>
                     </div>
                     <div class="joinmeetingformbox">
                         <form action="/webinar/joinwebinar" method="post">
                             <div class="form-group">
                                 <label for="webinarId">Webinar ID</label>
-                                <input class="form-control" type="text" name="webinarId" placeholder="Enter webinar ID.." required>
+                                <input class="form-control" type="text" name="webinarId" placeholder="Enter webinar ID.." required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="webinarCode">Code</label>
-                                <input class="form-control" type="password" name="webinarCode" placeholder="Enter webinar code.." required>
+                                <input class="form-control" type="password" name="webinarCode" placeholder="Enter webinar code.." required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <button class="button button-warning btn-block">Join Webinar</button>

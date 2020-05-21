@@ -77,29 +77,29 @@ body{
 .formpage{
     height: 100vh;
     padding-top: 5vh;
-    background: #900C0C;
+    background: white;
 }
 
 .loginformpage{
     height: 100vh;
     padding-top: 10vh;
-    background: #900C0C;
+    background: white;
 }
 
 .homepage{
     min-height: 100vh;
-    background: #900C0C;
+    background: white;
 }
 
 nav{
     margin-bottom: 10vh;
     box-shadow: 0 5px 10px -4px black;
-    background-color: white;
+    background-color: #d10b0b;
 }
 
 .navbar-brand{
     font-size: 30px;
-    color: red !important;
+    color: white !important;
     font-weight: bold;
 } 
 
@@ -111,15 +111,15 @@ nav{
 .nav-link{
     font-size: 23px;
     transition-duration: 0.4s;
-    color: black;
+    color: white !important;
     border-radius: 15px;
     margin: 0 1px;
 }
 
 .nav-link:hover{
-    background-color: #fd5050;
+    background-color: white;
     border-radius: 15px;
-    color: white !important;
+    color: #d10b0b !important;
 }
 
 .formbox{
@@ -220,7 +220,7 @@ nav{
 .smaller{
     font-size: 22px;
     font-family: 'Montserrat', sans-serif;
-    color: black !important;
+    color: whitesmoke !important;
     margin-left: 1vw;
     font-weight: normal;
 }
@@ -235,7 +235,7 @@ nav{
 }
 
 .meetingcolumn:hover{
-    background-color: #c22f0a;
+    background-color: #ff1b1b;
     text-decoration: none;
     transform: translateY(-2%);
     box-shadow: 0 5px 10px -2px black;
@@ -243,10 +243,11 @@ nav{
 
 
 .meetingcolumn h4, h5{
-    color: white;
+    color: #690909;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
 
 .webinarcolumn{
     padding: 4vh;
@@ -257,14 +258,24 @@ nav{
 }
 
 .webinarcolumn:hover{
-    background-color: #c22f0a;
+    background-color: #ff1b1b;
     text-decoration: none;
     transform: translateY(-1%);
     box-shadow: 0 3px 10px -2px black;
 }
 
-.webinarcolumn h4, h5{
-    color: white;
+.webinarcolumn h4{
+    color: #690909;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.webinarcolumn h1{
+    color: #690909;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.webinarcolumn h5{
+    color: #690909;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -304,18 +315,18 @@ hr.styledhr{
 }
 
 .button-submit{
-    background: #418f02;
+    background: #d10b0b;
     color: white;
 }
 
 .button-login{
-    background: #5ca805;
+    background: #d10b0b;
     color: white;
 }
 
 .button-warning{
-    color: black;
-    background: #ffef12;
+    color: white;
+    background: #d10b0b;
 }
 
 .top{
@@ -323,7 +334,7 @@ hr.styledhr{
 }
 
 .form-control{
-    box-shadow: 0 0 5px -1px #ff9f9f;
+    border: 1px solid black;
 }
 
 .form-group label{
@@ -336,7 +347,15 @@ hr.styledhr{
 }
 
 .formheading h1{
-    color: white;
+    color: #d10b0b;
+}
+
+.homeheading{
+    padding-bottom: 1vh;
+}
+
+.homeheading h1{
+    color: #690909;
 }
 
 .star{
@@ -625,6 +644,11 @@ hr.styledhr{
 
     .landingoptions li a{
         color: black;
+    }
+
+    .webinarcolumn, .meetingcolumn{
+        box-shadow: none;
+        margin-bottom: 1vh;
     }
 }
 
