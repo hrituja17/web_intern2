@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Meeting | RedPositive Services Pvt. Ltd.</title>
+    <link rel="shortcut icon" type="image/PNG" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
+</head>
+<body>
+    <div class="stream">
+        <div class="row">
+            <div id="videoarea" class="col-lg-9 col-md-12 order-lg-2 videoarea">
+                <div class="joinmeetingformbox" id="selectRoom" style="margin-top:40vh;">
+                    <div class="form-group">
+                        <label for="meetingPurpose">Meeting Name</label>
+                        <input class="form-control" type="text" id="roomNumber" name="meetingPurpose" placeholder="Enter meeting name.." required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <button class="button button-warning btn-block" id="goRoom">Start Camera</button>
+                    </div>
+                </div>
+                <div id="consultingRoom" class="video-row">
+                    <a title="Leave Meeting" class="out" href="/home"><i class="fa fa-close"></i></a>
+                    <button class="share"><i class="fa fa-share-alt-square"></i></button>
+                    <div class="video-column">
+                        <video id="localVideo" autoplay></video>
+                        <div class="text-center">
+                            <h5><%= user.fname %></h5>
+                        </div>
+                    </div>
+                    <div class="video-column">
+                        <video id="remoteVideo" autoplay></video>
+                        <div class="text-center">
+                            <h5><%= user.fname %></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 order-lg-1">
+                <div id="collapse-live" class="chatheading text-center">
+                    <h3>LIVE CHAT</h3>
+                    <span id="bars" class="bars"><i class="fa fa-bars"></i></span>
+                </div>
+                <div id="chat" class="chat">
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                    <div class="chatmessage">
+                        <div class="row">
+                            <div class="col-sm-6 text-left username"><h5><b>Username</b></h5></div>
+                            <div class="col-sm-6 text-right"><h6>15:30</h6></div>
+                        </div>
+                        <hr>
+                        <div class="text-left">
+                            <h6>Message will display here</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="textbox">
+                    <input class="message-field" type="text" name="message" placeholder="Type your message here..">
+                    <div class="buttons">
+                        <button id="sendMessage"><i class="fa fa-send"></i></button>
+                        <button id="sendFile"><i class="fa fa-paperclip"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../js/dynamic.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
